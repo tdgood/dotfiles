@@ -215,7 +215,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
             require("conform").format({ bufnr = ev.buf, lsp_format = "fallback" })
         end, { desc = "Format document", buf = ev.buf })
 
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover information", buf = ev.buf })
         vim.keymap.set("n", "<leader>h", function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
         end, { desc = "Toggle inlay hints", buf = ev.buf })
