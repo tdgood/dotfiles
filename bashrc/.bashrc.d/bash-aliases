@@ -1,0 +1,1 @@
+alias up="sudo dnf update -y && flatpak update -y"
