@@ -8,10 +8,10 @@ fi
 
 case "$1" in
     create)
-        stow --verbose --target=$HOME --restow */
+        [ -d */ ] && stow --verbose --target=$HOME --restow */ || { echo "Error: No package directories found."; exit 1; }
         ;;
     delete)
-        stow --verbose --target=$HOME --delete */
+        [ -d */ ] && stow --verbose --target=$HOME --delete */ || { echo "Error: No package directories found."; exit 1; }
         ;;
     *)
         echo "Usage: $0 [create|delete]"
