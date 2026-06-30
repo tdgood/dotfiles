@@ -6,12 +6,15 @@ if ! command -v stow >/dev/null 2>&1; then
     exit 1
 fi
 
+# Allow script to be ran outside of dotfiles directory
+cd "$(dirname "$0")" || exit 1
+
 case "$1" in
     create)
-        stow --verbose --target=$HOME --restow */
+        stow --verbose --target="$HOME" --restow */
         ;;
     delete)
-        stow --verbose --target=$HOME --delete */
+        stow --verbose --target="$HOME" --delete */
         ;;
     *)
         echo "Usage: $0 [create|delete]"
