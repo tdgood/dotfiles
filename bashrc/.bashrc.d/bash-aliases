@@ -1,0 +1,10 @@
+alias up="sudo dnf update -y && flatpak update -y"
+alias g++a="g++ -std=c++23 \
+            -Wall -Wextra -Weffc++ \
+            -Werror -pedantic-errors \
+            -Wconversion -Wsign-conversion \
+            -Wshadow \
+            -ggdb \
+            -o $HOME/.local/bin/main \
+            main.cpp"
+alias g++rm="rm $HOME/.local/bin/main"
